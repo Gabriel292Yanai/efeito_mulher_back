@@ -37,6 +37,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/rastreamento/**").permitAll()
                         .requestMatchers("/api/desejos/**").authenticated()
                         .requestMatchers("/api/pedidos/**").authenticated()
+                        .requestMatchers("/api/usuarios/alterar-senha", "/api/usuarios/me").authenticated()
                         .requestMatchers("/api/avaliacoes/produto/**").permitAll()
                         .requestMatchers("/api/pagamento/**").authenticated()
                         .requestMatchers("/api/admin/**").hasRole("ADMIN")
