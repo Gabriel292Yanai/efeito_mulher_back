@@ -3,10 +3,10 @@ spring:
     name: efeito-mulher
 
   datasource:
-    url: jdbc:mysql://localhost:3306/efeito_mulher?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://mysql.railway.internal:3306/railway
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password: Yanai291202
+    password: XrQMpuqxgooJjVyDBvFqVCcgHspDQKSM
 
   jpa:
     hibernate:
