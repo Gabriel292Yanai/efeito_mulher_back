@@ -3,7 +3,7 @@ spring:
     name: efeito-mulher
 
   datasource:
-    url: jdbc:mysql://mysql.railway.internal:3306/railway
+    url: jdbc:mysql://mysql.railway.internal:3306/railway?useSSL=false&serverTimezone=UTC
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: XrQMpuqxgooJjVyDBvFqVCcgHspDQKSM
