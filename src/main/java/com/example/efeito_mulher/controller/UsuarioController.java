@@ -59,9 +59,11 @@ public class UsuarioController {
 
     @PutMapping("/me")
     public ResponseEntity<?> atualizarUsuario(
-            @AuthenticationPrincipal Usuario usuario,
+            @AuthenticationPrincipal CustomUserDetails details,
             @RequestBody UsuarioAtualizarDTO dados
     ) {
+        Usuario usuario = details.getUsuario();
+
         usuario.setTelefone(dados.getTelefone());
         usuario.setCelular(dados.getCelular());
         usuario.setCep(dados.getCep());
@@ -79,9 +81,11 @@ public class UsuarioController {
 
     @PostMapping("/alterar-senha")
     public ResponseEntity<?> alterarSenha(
-            @AuthenticationPrincipal Usuario usuario,
+            @AuthenticationPrincipal CustomUserDetails details,
             @RequestBody SenhaAlterarDTO dto
     ) {
+        Usuario usuario = details.getUsuario();
+
         if (!encoder.matches(dto.getSenhaAtual(), usuario.getSenha())) {
             return ResponseEntity.badRequest().body("Senha atual incorreta");
         }
